@@ -12,6 +12,9 @@
 		90C607DA2B80C8E400189480 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 90C607D92B80C8E400189480 /* Assets.xcassets */; };
 		90C607DD2B80C8E400189480 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 90C607DC2B80C8E400189480 /* Preview Assets.xcassets */; };
 		90C607FE2B80ED9700189480 /* Launch Screen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 90C607FD2B80ED9700189480 /* Launch Screen.storyboard */; };
+		90C608012B81317500189480 /* WelcomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90C608002B81317500189480 /* WelcomeView.swift */; };
+		90C608032B81346800189480 /* GuideItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90C608022B81346800189480 /* GuideItem.swift */; };
+		90C608062B81351600189480 /* SwiftUIX in Frameworks */ = {isa = PBXBuildFile; productRef = 90C608052B81351600189480 /* SwiftUIX */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -21,6 +24,9 @@
 		90C607D92B80C8E400189480 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		90C607DC2B80C8E400189480 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		90C607FD2B80ED9700189480 /* Launch Screen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = "Launch Screen.storyboard"; sourceTree = "<group>"; };
+		90C608002B81317500189480 /* WelcomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeView.swift; sourceTree = "<group>"; };
+		90C608022B81346800189480 /* GuideItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GuideItem.swift; sourceTree = "<group>"; };
+		90C608082B8139A200189480 /* EstiMate.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = EstiMate.entitlements; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -28,6 +34,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				90C608062B81351600189480 /* SwiftUIX in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -39,6 +46,7 @@
 			children = (
 				90C607D42B80C8E300189480 /* EstiMate */,
 				90C607D32B80C8E300189480 /* Products */,
+				90C608072B81352700189480 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -53,6 +61,8 @@
 		90C607D42B80C8E300189480 /* EstiMate */ = {
 			isa = PBXGroup;
 			children = (
+				90C608082B8139A200189480 /* EstiMate.entitlements */,
+				90C607FF2B81314100189480 /* Welcome */,
 				90C607D52B80C8E300189480 /* EstiMateApp.swift */,
 				90C607D72B80C8E300189480 /* ContentView.swift */,
 				90C607D92B80C8E400189480 /* Assets.xcassets */,
@@ -68,6 +78,22 @@
 				90C607DC2B80C8E400189480 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		90C607FF2B81314100189480 /* Welcome */ = {
+			isa = PBXGroup;
+			children = (
+				90C608002B81317500189480 /* WelcomeView.swift */,
+				90C608022B81346800189480 /* GuideItem.swift */,
+			);
+			path = Welcome;
+			sourceTree = "<group>";
+		};
+		90C608072B81352700189480 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -86,6 +112,9 @@
 			dependencies = (
 			);
 			name = EstiMate;
+			packageProductDependencies = (
+				90C608052B81351600189480 /* SwiftUIX */,
+			);
 			productName = EstiMate;
 			productReference = 90C607D22B80C8E300189480 /* EstiMate.app */;
 			productType = "com.apple.product-type.application";
@@ -114,6 +143,9 @@
 				Base,
 			);
 			mainGroup = 90C607C92B80C8E300189480;
+			packageReferences = (
+				90C608042B81351600189480 /* XCRemoteSwiftPackageReference "SwiftUIX" */,
+			);
 			productRefGroup = 90C607D32B80C8E300189480 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -142,7 +174,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				90C607D82B80C8E300189480 /* ContentView.swift in Sources */,
+				90C608012B81317500189480 /* WelcomeView.swift in Sources */,
 				90C607D62B80C8E300189480 /* EstiMateApp.swift in Sources */,
+				90C608032B81346800189480 /* GuideItem.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -273,6 +307,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = EstiMate/EstiMate.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"EstiMate/Preview Content\"";
@@ -303,6 +338,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = EstiMate/EstiMate.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"EstiMate/Preview Content\"";
@@ -350,6 +386,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		90C608042B81351600189480 /* XCRemoteSwiftPackageReference "SwiftUIX" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/SwiftUIX/SwiftUIX";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 0.1.9;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		90C608052B81351600189480 /* SwiftUIX */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 90C608042B81351600189480 /* XCRemoteSwiftPackageReference "SwiftUIX" */;
+			productName = SwiftUIX;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 90C607CA2B80C8E300189480 /* Project object */;
 }

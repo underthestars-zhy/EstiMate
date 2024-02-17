@@ -9,9 +9,18 @@ import SwiftUI
 
 @main
 struct EstiMateApp: App {
+    @AppStorage("userID") var userID: String = ""
+
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            Group {
+                if userID.isEmpty {
+                    WelcomeView()
+                } else {
+                    ContentView()
+                }
+            }
+            .ignoresSafeArea(.all)
         }
     }
 }
