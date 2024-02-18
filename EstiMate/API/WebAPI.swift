@@ -175,5 +175,76 @@ struct WebAPI {
 
         return true
     }
+
+//    func getBetCoints() async throws -> Double {
+//        
+//    }
+
+    static func fetchAllBets() async throws -> [Bet] {
+        guard let URL = URL(string: "https://b482-68-65-175-21.ngrok-free.app/bets/\(UserDefaults.standard.string(forKey: "userID") ?? "")") else { return [] }
+
+        let (data, response) = try await URLSession.shared.data(from: URL)
+
+        guard let httpResponse = response as? HTTPURLResponse, httpResponse.statusCode == 200 else {
+            return []
+        }
+
+        let rawJson = try JSON(data: data)
+
+        let betJsonArray = rawJson["bets"].arrayValue
+
+        var results = [Bet]()
+
+        for json in betJsonArray {
+            func calStatus() -> BetStatus {
+                if json["id"]["isSettled"].boolValue {
+                    return .done
+                } else {
+                    return .inProgress
+                }
+            }
+
+            results.append(Bet(id: UUID(uuidString: json["betId"].stringValue) ?? UUID(), title: json["desc"].stringValue, emoji: json["emoji"].stringValue, start: Date(timeIntervalSince1970: TimeInterval(json["createdAt"].intValue)), end: Date(timeIntervalSince1970: TimeInterval(json["expiry"].intValue)), amount: json["amount"].doubleValue, status: calStatus()))
+        }
+
+        return results
+    }
+
+    static func setDeviceToken(token: String) async throws {
+        guard let URL = URL(string: "https://b482-68-65-175-21.ngrok-free.app/update-device-token") else { return }
+        var request = URLRequest(url: URL)
+        request.httpMethod = "POST"
+
+        // Headers
+
+        request.addValue("application/json; charset=utf-8", forHTTPHeaderField: "Content-Type")
+
+        // JSON Body
+
+        let bodyObject: [String : Any] = [
+            "deviceToken": token,
+            "userId": UserDefaults.standard.string(forKey: "userID") ?? "",
+        ]
+        request.httpBody = try! JSONSerialization.data(withJSONObject: bodyObject, options: [])
+
+        let (_, response) = try await URLSession.shared.data(for: request)
+
+        guard let httpResponse = response as? HTTPURLResponse, httpResponse.statusCode == 200 else {
+            return
+        }
+
+    }
+
+    static func joinBet(bet: Bet) async throws -> Bool {
+        guard let URL = URL(string: "https://b482-68-65-175-21.ngrok-free.app/join-bet/\(UserDefaults.standard.string(forKey: "userID") ?? "")/\(bet.id)") else { return false }
+
+        let (_, response) = try await URLSession.shared.data(from: URL)
+
+        guard let httpResponse = response as? HTTPURLResponse, httpResponse.statusCode == 200 else {
+            return false
+        }
+
+        return true
+    }
 }
 

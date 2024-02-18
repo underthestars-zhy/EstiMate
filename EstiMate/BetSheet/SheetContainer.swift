@@ -9,33 +9,37 @@ import SwiftUI
 import SwiftUIX
 
 struct SheetContainer: View {
-    @State var status = SheetStatus.bottom
+    @State var statusPublisher = SheetStatusPublisher.shared
 
     var body: some View {
         VStack(spacing: 0) {
             Spacer()
 
-            BeetSheet(status: $status)
-                .offset(y: status == .bottom ? Screen.height * 0.7 - 147 : 0)
+            BeetSheet(status: $statusPublisher.status)
+                .offset(y: statusPublisher.status == .bottom ? Screen.height * 0.7 - 147 : 0)
         }
         .maxWidth(.infinity)
-        .background(Color.black.opacity(status == .bottom ? 0 : 0.2)
+        .background(Color.black.opacity(statusPublisher.status == .bottom ? 0 : 0.2)
             .onTapGesture {
-                if status == .input {
-                    status = .bottom
+                if statusPublisher.status == .input {
+                    statusPublisher.status = .bottom
                 }
 
-                if case .receive(_) = status {
-                    status = .bottom
+                if case .receive(_) = statusPublisher.status {
+                    statusPublisher.status = .bottom
+                }
+
+                if case .vote(_) = statusPublisher.status {
+                    statusPublisher.status = .bottom
                 }
             })
-        .animation(.easeInOut, value: status)
+        .animation(.easeInOut, value: statusPublisher.status)
         .ignoresSafeArea(.keyboard)
         .onOpenURL { url in
             switch url.host {
             case "bet":
                 let betID = url.pathComponents[1]
-                status = .receive(betID: betID)
+                statusPublisher.status = .receive(betID: betID)
             default: print(url.host ?? "Wrong")
             }
         }
@@ -45,4 +49,11 @@ struct SheetContainer: View {
 #Preview {
     SheetContainer()
         .ignoresSafeArea(.all)
+}
+
+@Observable
+class SheetStatusPublisher {
+    static let shared = SheetStatusPublisher()
+
+    var status = SheetStatus.bottom
 }

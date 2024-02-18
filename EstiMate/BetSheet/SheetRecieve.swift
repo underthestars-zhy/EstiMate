@@ -71,7 +71,13 @@ struct SheetRecieve: View {
             .padding(.bottom, 30)
 
             Button {
-                if let bet { status = .side(bet: bet) }
+                if let bet {
+                    Task {
+                        if try await WebAPI.joinBet(bet: bet) {
+                            status = .side(bet: bet)
+                        }
+                    }
+                }
             } label: {
                 Text("Join")
                     .foregroundStyle(.white)

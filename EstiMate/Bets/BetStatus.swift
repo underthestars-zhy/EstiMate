@@ -9,7 +9,6 @@ import Foundation
 
 enum BetStatus {
     case inProgress
-    case inVote
     case voted
     case done
     case canceled

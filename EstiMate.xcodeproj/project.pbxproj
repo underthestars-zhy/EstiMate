@@ -39,6 +39,8 @@
 		90C6083D2B81B88400189480 /* icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 90C6083C2B81B88400189480 /* icon.png */; };
 		90C608402B81BC1B00189480 /* AllBets.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90C6083F2B81BC1B00189480 /* AllBets.swift */; };
 		90C6085C2B81D3DF00189480 /* SheetRecieve.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90C6085B2B81D3DF00189480 /* SheetRecieve.swift */; };
+		90C6085E2B81E5B500189480 /* SheetVote.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90C6085D2B81E5B500189480 /* SheetVote.swift */; };
+		90C608612B81EA0D00189480 /* SwiftUIPullToRefresh in Frameworks */ = {isa = PBXBuildFile; productRef = 90C608602B81EA0D00189480 /* SwiftUIPullToRefresh */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -73,6 +75,7 @@
 		90C6083C2B81B88400189480 /* icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = icon.png; path = EstiMate/Statics/icon.png; sourceTree = SOURCE_ROOT; };
 		90C6083F2B81BC1B00189480 /* AllBets.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllBets.swift; sourceTree = "<group>"; };
 		90C6085B2B81D3DF00189480 /* SheetRecieve.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SheetRecieve.swift; sourceTree = "<group>"; };
+		90C6085D2B81E5B500189480 /* SheetVote.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SheetVote.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -82,6 +85,7 @@
 			files = (
 				90C6080E2B814D8100189480 /* VisualEffectView in Frameworks */,
 				90C608062B81351600189480 /* SwiftUIX in Frameworks */,
+				90C608612B81EA0D00189480 /* SwiftUIPullToRefresh in Frameworks */,
 				90C608372B81ADC200189480 /* SwiftyJSON in Frameworks */,
 				90C608192B8152B000189480 /* SwiftDate in Frameworks */,
 			);
@@ -185,6 +189,7 @@
 				90C608332B81A4C300189480 /* SheetSide.swift */,
 				90C608382B81AF5C00189480 /* SheetInvite.swift */,
 				90C6085B2B81D3DF00189480 /* SheetRecieve.swift */,
+				90C6085D2B81E5B500189480 /* SheetVote.swift */,
 			);
 			path = BetSheet;
 			sourceTree = "<group>";
@@ -236,6 +241,7 @@
 				90C6080D2B814D8100189480 /* VisualEffectView */,
 				90C608182B8152B000189480 /* SwiftDate */,
 				90C608362B81ADC200189480 /* SwiftyJSON */,
+				90C608602B81EA0D00189480 /* SwiftUIPullToRefresh */,
 			);
 			productName = EstiMate;
 			productReference = 90C607D22B80C8E300189480 /* EstiMate.app */;
@@ -270,6 +276,7 @@
 				90C6080C2B814D8100189480 /* XCRemoteSwiftPackageReference "VisualEffectView" */,
 				90C608172B8152B000189480 /* XCRemoteSwiftPackageReference "SwiftDate" */,
 				90C608352B81ADC200189480 /* XCRemoteSwiftPackageReference "SwiftyJSON" */,
+				90C6085F2B81EA0D00189480 /* XCRemoteSwiftPackageReference "swiftui-pull-to-refresh" */,
 			);
 			productRefGroup = 90C607D32B80C8E300189480 /* Products */;
 			projectDirPath = "";
@@ -313,6 +320,7 @@
 				90C6082D2B819BB800189480 /* SheetTime.swift in Sources */,
 				90C608202B8186C000189480 /* SheetStatus.swift in Sources */,
 				90C6083B2B81AFAC00189480 /* BetInvited.swift in Sources */,
+				90C6085E2B81E5B500189480 /* SheetVote.swift in Sources */,
 				90C6082B2B81929100189480 /* CreateBet.swift in Sources */,
 				90C608302B819E3700189480 /* MeasureSize.swift in Sources */,
 				90C608392B81AF5C00189480 /* SheetInvite.swift in Sources */,
@@ -465,8 +473,7 @@
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = "Launch Screen.storyboard";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = UIInterfaceOrientationPortrait;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UIUserInterfaceStyle = Light;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -475,9 +482,13 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.zhuhaoyu.EstiMate;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -498,8 +509,7 @@
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = "Launch Screen.storyboard";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = UIInterfaceOrientationPortrait;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UIUserInterfaceStyle = Light;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -508,9 +518,13 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.zhuhaoyu.EstiMate;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
@@ -570,6 +584,14 @@
 				minimumVersion = 5.0.1;
 			};
 		};
+		90C6085F2B81EA0D00189480 /* XCRemoteSwiftPackageReference "swiftui-pull-to-refresh" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/globulus/swiftui-pull-to-refresh";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.1.9;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -592,6 +614,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 90C608352B81ADC200189480 /* XCRemoteSwiftPackageReference "SwiftyJSON" */;
 			productName = SwiftyJSON;
+		};
+		90C608602B81EA0D00189480 /* SwiftUIPullToRefresh */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 90C6085F2B81EA0D00189480 /* XCRemoteSwiftPackageReference "swiftui-pull-to-refresh" */;
+			productName = SwiftUIPullToRefresh;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

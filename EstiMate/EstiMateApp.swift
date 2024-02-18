@@ -71,6 +71,7 @@ class AppDelegate: NSObject, UIApplicationDelegate, UNUserNotificationCenterDele
             print("Past Token: \(pastToken)")
             if pastToken != token {
                 UserDefaults.standard.set(token, forKey: "pushNotificationToken")
+                Task.detached { try await WebAPI.setDeviceToken(token: token) }
             }
         } else {
             UserDefaults.standard.set(token, forKey: "pushNotificationToken")
@@ -92,6 +93,14 @@ class AppDelegate: NSObject, UIApplicationDelegate, UNUserNotificationCenterDele
     ) {
         print("receive notification")
         print(userInfo)
+
+        switch userInfo["type"] as? String {
+        case "join":
+            if let name = userInfo["name"] as? String {
+                BetInvited.shared.list.append(name)
+            }
+        default: break
+        }
     }
 
 }

@@ -21,17 +21,15 @@ struct BetIndicator: View {
                     .overlay {
                         VStack {
                             Spacer()
+                                .frame(minHeight: 0)
 
                             Rectangle()
                                 .frame(width: 60, height: calculatePercentageOfToday(start: bet.start, end: bet.end, today: Date()) * 60)
                                 .foregroundStyle(.accent)
+
                         }
                         .clipShape(Circle())
                     }
-            case .inVote:
-                Circle()
-                    .frame(width: 60, height: 60)
-                    .foregroundStyle(.accent)
             case .voted:
                 Circle()
                     .frame(width: 60, height: 60)
@@ -64,7 +62,7 @@ struct BetIndicator: View {
         // Calculate the total number of days in the range
         let totalDays = calendar.dateComponents([.day], from: start, to: end).day! + 1
         // Calculate the number of days from start to today
-        let daysUntilToday = calendar.dateComponents([.day], from: start, to: today).day!
+        let daysUntilToday = calendar.dateComponents([.day], from: start, to: today).day! + 1
 
         // Calculate the percentage
         let percentage = (Double(daysUntilToday) / Double(totalDays))

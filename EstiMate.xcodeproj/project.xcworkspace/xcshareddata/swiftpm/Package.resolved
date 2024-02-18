@@ -1,5 +1,5 @@
 {
-  "originHash" : "8e47fb915285256eecfb7eb5ddea4b0ff3d9993c87cd64d54d4dde588dd26a55",
+  "originHash" : "12b76a378e7b9c856cd3f379da9c2aff28123c553f1aa18c1d0a23e2438b9ba7",
   "pins" : [
     {
       "identity" : "swiftdate",
@@ -8,6 +8,15 @@
       "state" : {
         "revision" : "5d943224c3bb173e6ecf27295611615eba90c80e",
         "version" : "7.0.0"
+      }
+    },
+    {
+      "identity" : "swiftui-pull-to-refresh",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/globulus/swiftui-pull-to-refresh",
+      "state" : {
+        "revision" : "1852a4eb7e7a12a768c64b25b1bd905993ced4eb",
+        "version" : "1.1.9"
       }
     },
     {

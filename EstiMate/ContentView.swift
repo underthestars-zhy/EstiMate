@@ -7,12 +7,22 @@
 
 import SwiftUI
 import SwiftDate
+import SwiftUIPullToRefresh
 
 struct ContentView: View {
     @State var allBets = AllBets.shared
 
     var body: some View {
-        ScrollView {
+        RefreshableScrollView { done in
+            Task {
+                try await allBets.refresh()
+                done()
+            }
+        } progress: { state in
+            ProgressView().progressViewStyle(.circular)
+                .controlSize(.large)
+                .padding(.top, 148)
+        } content: {
             VStack(spacing: 40) {
                 ForEach(allBets.bets) { bet in
                     BetItem(bet: bet)
@@ -31,6 +41,13 @@ struct ContentView: View {
         }
         .overlay {
             SheetContainer()
+        }
+        .task {
+            do {
+                try await allBets.refresh()
+            } catch {
+                print(error)
+            }
         }
     }
 }

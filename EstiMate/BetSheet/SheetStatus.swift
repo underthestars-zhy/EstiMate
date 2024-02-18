@@ -17,6 +17,7 @@ enum SheetStatus: Equatable {
     case invite
     case receive(betID: String)
     case side(bet: Bet)
+    case vote(bet: Bet)
 
     var needPadding: Bool {
         switch self {

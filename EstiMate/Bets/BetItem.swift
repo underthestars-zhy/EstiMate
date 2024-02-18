@@ -12,27 +12,49 @@ struct BetItem: View {
     let bet: Bet
 
     var body: some View {
-        HStack(alignment: .top, spacing: 16) {
-            BetIndicator(bet: bet)
-
-            VStack(alignment: .leading, spacing: 20) {
-                Text(bet.title)
-                    .font(.system(size: 18).weight(.bold))
-
-                HStack(spacing: 12) {
-                    Image(systemName: "clock.badge")
-                        .font(.system(size: 18).weight(.bold))
-                        .foregroundStyle(.accent)
-                        .opacity(0.8)
-
-                    Text("\(formatDateToMDD(bet.start)) -> \((formatDateToMDD(bet.end)))")
-                        .font(.system(size: 15).weight(.bold))
-                        .opacity(0.6)
-                }
+        Button {
+            if areDatesOnSameDay(date1: bet.end, date2: Date()) {
+                SheetStatusPublisher.shared.status = .vote(bet: bet)
             }
-            .frame(maxWidth: .infinity, alignment: .leading)
-            .padding(.top, 8)
+        } label: {
+            HStack(alignment: .top, spacing: 16) {
+                BetIndicator(bet: bet)
+
+                VStack(alignment: .leading, spacing: 20) {
+                    Text(bet.title)
+                        .foregroundStyle(.black)
+                        .font(.system(size: 18).weight(.bold))
+
+                    HStack(spacing: 12) {
+                        Image(systemName: "clock.badge")
+                            .font(.system(size: 18).weight(.bold))
+                            .foregroundStyle(.accent)
+                            .opacity(0.8)
+
+                        Text("\(formatDateToMDD(bet.start)) -> \((formatDateToMDD(bet.end)))")
+                            .foregroundStyle(.black)
+                            .font(.system(size: 15).weight(.bold))
+                            .opacity(0.6)
+                    }
+                }
+                .frame(maxWidth: .infinity, alignment: .leading)
+                .padding(.top, 8)
+            }
         }
+        .disabled(!areDatesOnSameDay(date1: bet.end, date2: Date()))
+    }
+
+    func areDatesOnSameDay(date1: Date, date2: Date) -> Bool {
+        let calendar = Calendar.current
+
+        // Extract year, month, and day components for both dates
+        let date1Components = calendar.dateComponents([.year, .month, .day], from: date1)
+        let date2Components = calendar.dateComponents([.year, .month, .day], from: date2)
+
+        // Compare the year, month, and day components
+        return date1Components.year == date2Components.year &&
+        date1Components.month == date2Components.month &&
+        date1Components.day == date2Components.day
     }
 
     func formatDateToMDD(_ date: Date) -> String {

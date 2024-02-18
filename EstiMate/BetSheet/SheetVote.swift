@@ -1,5 +1,5 @@
 //
-//  SheetSide.swift
+//  SheetVote.swift
 //  EstiMate
 //
 //  Created by 朱浩宇 on 2024/2/17.
@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct SheetSide: View {
+struct SheetVote: View {
     @AppStorage("betCoins") var betCoins: Double = 100
 
     @State var createBet = CreateBet.shared
@@ -17,11 +17,11 @@ struct SheetSide: View {
     var body: some View {
         VStack(spacing: 30) {
             HStack(spacing: 10) {
-                Image(systemName: "smallcircle.filled.circle")
+                Image(systemName: "smallcircle.circle.fill")
                     .foregroundStyle(.accent)
                     .font(.system(size: 24).weight(.bold))
 
-                Text("Pick a Side")
+                Text("Vote")
                     .font(.system(size: 16).weight(.bold))
             }
             .opacity(0.8)
@@ -37,13 +37,7 @@ struct SheetSide: View {
 
             VStack(spacing: 20) {
                 Button {
-                    Task {
-                        if try await WebAPI.setSide(betID: bet.id.uuidString, side: true) {
-                            status = .bottom
-                            betCoins -= bet.amount
-                            AllBets.shared.add(bet: bet)
-                        }
-                    }
+
                 } label: {
                     Text("YES")
                         .foregroundStyle(.white)
@@ -55,13 +49,7 @@ struct SheetSide: View {
                 }
 
                 Button {
-                    Task {
-                        if try await WebAPI.setSide(betID: bet.id.uuidString, side: false) {
-                            status = .bottom
-                            betCoins -= bet.amount
-                            AllBets.shared.add(bet: bet)
-                        }
-                    }
+
                 } label: {
                     Text("NO")
                         .foregroundStyle(.white)

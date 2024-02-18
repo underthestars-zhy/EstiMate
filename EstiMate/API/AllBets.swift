@@ -14,20 +14,29 @@ import SwiftDate
     var bets = [Bet]()
     var recentAddBetID: UUID? = nil
 
-    init() {
-        bets.append(.init(id: UUID(), title: "Daniel will find a girlfriend in one week", emoji: "😘", start: Date() - 10.days, end: Date() + 6.days, amount: 10, status: .inProgress))
-
-        bets.append(.init(id: UUID(), title: "Daniel will find a girlfriend in one week", emoji: "😘", start: Date() - 10.days, end: Date() + 6.days, amount: 10, status: .voted))
-
-        bets.append(.init(id: UUID(), title: "Daniel will find a girlfriend in one week", emoji: "😘", start: Date() - 10.days, end: Date() + 6.days, amount: 10, status: .done))
-    }
+    init() {}
 
     func add(bet: Bet) {
+        if bets.map(\.id).contains(bet.id) { return }
+
         bets.append(bet)
         recentAddBetID = bet.id
 
         bets = bets.sorted { b1, b2 in
             b1.end > b2.end
+        }
+    }
+
+    func refresh() async throws {
+        bets = try await WebAPI.fetchAllBets().sorted { b1, b2 in
+            b1.end > b2.end
+        }
+
+    }
+
+    func getBet(by id: String) -> Bet? {
+        bets.first { bet in
+            bet.id.uuidString == id
         }
     }
 }

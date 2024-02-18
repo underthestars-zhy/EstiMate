@@ -63,7 +63,9 @@ struct SheetInvite: View {
                 }
 
                 Button {
-                    
+                    if let bet = AllBets.shared.getBet(by: AllBets.shared.recentAddBetID!.uuidString) {
+                        status = .side(bet: bet)
+                    }
                 } label: {
                     Circle()
                         .frame(width: 50, height: 50)
