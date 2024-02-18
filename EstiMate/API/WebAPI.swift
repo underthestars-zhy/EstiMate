@@ -118,13 +118,35 @@ struct WebAPI {
         ]
         request.httpBody = try! JSONSerialization.data(withJSONObject: bodyObject, options: [])
 
-        let (data, response) = try await URLSession.shared.data(for: request)
+        let (_, response) = try await URLSession.shared.data(for: request)
 
         guard let httpResponse = response as? HTTPURLResponse, httpResponse.statusCode == 200 else {
             return false
         }
 
         return true
+    }
+
+    static func getBet(by betID: String) async throws -> Bet? {
+        guard let URL = URL(string: "https://b482-68-65-175-21.ngrok-free.app/bet/\(betID)") else { return nil }
+
+        let (data, response) = try await URLSession.shared.data(from: URL)
+
+        guard let httpResponse = response as? HTTPURLResponse, httpResponse.statusCode == 200 else {
+            return nil
+        }
+
+        let json = try JSON(data: data)
+
+        func calStatus() -> BetStatus {
+            if json["id"]["isSettled"].boolValue {
+                return .done
+            } else {
+                return .inProgress
+            }
+        }
+
+        return Bet(id: UUID(uuidString: json["id"]["betId"].stringValue) ?? UUID(), title: json["id"]["desc"].stringValue, emoji: json["id"]["emoji"].stringValue, start: Date(timeIntervalSince1970: TimeInterval(json["id"]["createdAt"].intValue)), end: Date(timeIntervalSince1970: TimeInterval(json["id"]["expiry"].intValue)), amount: json["id"]["amount"].doubleValue, status: calStatus())
     }
 }
 

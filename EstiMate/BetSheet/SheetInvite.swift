@@ -39,8 +39,7 @@ struct SheetInvite: View {
                 }
             }
             .padding(.leading, 30)
-            .padding(.top, 30)
-            .padding(.bottom, 60)
+            .padding(.bottom, 30)
 
             HStack(spacing: 12) {
                 Button {
@@ -60,11 +59,11 @@ struct SheetInvite: View {
                         )
                 }
                 .sheet(isPresented: $showShare) {
-                    ActivityViewController(url: URL(string: "estimate://\(AllBets.shared.recentAddBetID!.uuidString)")!)
+                    ActivityViewController(url: URL(string: "estimate://bet/\(AllBets.shared.recentAddBetID!.uuidString)")!)
                 }
 
                 Button {
-
+                    
                 } label: {
                     Circle()
                         .frame(width: 50, height: 50)

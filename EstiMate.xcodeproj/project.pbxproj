@@ -38,6 +38,7 @@
 		90C6083B2B81AFAC00189480 /* BetInvited.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90C6083A2B81AFAC00189480 /* BetInvited.swift */; };
 		90C6083D2B81B88400189480 /* icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 90C6083C2B81B88400189480 /* icon.png */; };
 		90C608402B81BC1B00189480 /* AllBets.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90C6083F2B81BC1B00189480 /* AllBets.swift */; };
+		90C6085C2B81D3DF00189480 /* SheetRecieve.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90C6085B2B81D3DF00189480 /* SheetRecieve.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -71,6 +72,7 @@
 		90C6083A2B81AFAC00189480 /* BetInvited.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BetInvited.swift; sourceTree = "<group>"; };
 		90C6083C2B81B88400189480 /* icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = icon.png; path = EstiMate/Statics/icon.png; sourceTree = SOURCE_ROOT; };
 		90C6083F2B81BC1B00189480 /* AllBets.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllBets.swift; sourceTree = "<group>"; };
+		90C6085B2B81D3DF00189480 /* SheetRecieve.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SheetRecieve.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -182,6 +184,7 @@
 				90C608312B81A1D200189480 /* SheetAmount.swift */,
 				90C608332B81A4C300189480 /* SheetSide.swift */,
 				90C608382B81AF5C00189480 /* SheetInvite.swift */,
+				90C6085B2B81D3DF00189480 /* SheetRecieve.swift */,
 			);
 			path = BetSheet;
 			sourceTree = "<group>";
@@ -297,6 +300,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				90C6080B2B813F0800189480 /* NavBar.swift in Sources */,
+				90C6085C2B81D3DF00189480 /* SheetRecieve.swift in Sources */,
 				90C608152B81506200189480 /* BetStatus.swift in Sources */,
 				90C608222B81875B00189480 /* SheetBottom.swift in Sources */,
 				90C608242B8188AC00189480 /* SheetContainer.swift in Sources */,
@@ -377,7 +381,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 17.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
 				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
@@ -434,7 +438,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 17.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
 				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
@@ -461,8 +465,8 @@
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = "Launch Screen.storyboard";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UIUserInterfaceStyle = Light;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -494,8 +498,8 @@
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = "Launch Screen.storyboard";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UIUserInterfaceStyle = Light;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",

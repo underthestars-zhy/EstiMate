@@ -32,9 +32,6 @@ struct ContentView: View {
         .overlay {
             SheetContainer()
         }
-        .onOpenURL { url in
-            
-        }
     }
 }
 

@@ -10,17 +10,16 @@ import SwiftUI
 struct SheetSide: View {
     @State var createBet = CreateBet.shared
     @Binding var status: SheetStatus
-
-    @State var betCoins: Double = 100
+    let bet: Bet
 
     var body: some View {
         VStack(spacing: 30) {
             HStack(spacing: 10) {
-                Image(systemName: "bitcoinsign.circle.fill")
+                Image(systemName: "smallcircle.filled.circle")
                     .foregroundStyle(.accent)
                     .font(.system(size: 24).weight(.bold))
 
-                Text("Amount")
+                Text("Pick a Side")
                     .font(.system(size: 16).weight(.bold))
             }
             .opacity(0.8)
@@ -28,42 +27,45 @@ struct SheetSide: View {
             .padding(.leading, 30)
             .padding(.top, 20)
 
-            HStack(spacing: 30) {
+            Text(bet.title)
+                .font(.system(size: 24).weight(.bold))
+                .frame(maxWidth: .infinity, alignment: .leading)
+                .padding(.horizontal, 30)
+                .padding(.bottom, 30)
+
+            VStack(spacing: 20) {
                 Button {
-                    createBet.amount -= 1
-                } label: {
-                    Image(systemName: "minus.circle.fill")
-                        .font(.system(size: 22).weight(.bold))
-                }
-                .foregroundStyle(createBet.amount > 1 ? .accent : Color(hexadecimal: "FFC2E3"))
-                .disabled(createBet.amount <= 1)
 
-                Text("\(createBet.amount)")
-                    .font(.system(size: 64, design: .rounded).weight(.bold))
+                } label: {
+                    Text("YES")
+                        .foregroundStyle(.white)
+                        .font(.system(size: 20, design: .rounded).weight(.bold))
+                        .frame(maxWidth: .infinity)
+                        .frame(height: 50)
+                        .background(.accent)
+                        .cornerRadius(25)
+                }
 
                 Button {
-                    createBet.amount += 1
-                } label: {
-                    Image(systemName: "plus.circle.fill")
-                        .font(.system(size: 22).weight(.bold))
-                }
-                .foregroundStyle(createBet.amount < Int(betCoins) ? .accent : Color(hexadecimal: "FFC2E3"))
-                .disabled(createBet.amount >= Int(betCoins))
-            }
 
-            Button {
-                //                status = .amount
-            } label: {
-                Text("Submit")
-                    .foregroundStyle(.white)
-                    .font(.system(size: 20, design: .rounded).weight(.bold))
-                    .frame(maxWidth: .infinity)
-                    .frame(height: 50)
-                    .background(.accent)
-                    .cornerRadius(25)
+                } label: {
+                    Text("NO")
+                        .foregroundStyle(.white)
+                        .font(.system(size: 20, design: .rounded).weight(.bold))
+                        .frame(maxWidth: .infinity)
+                        .frame(height: 50)
+                        .background(Color(hexadecimal: "5D81FF"))
+                        .cornerRadius(25)
+                }
             }
             .padding(.horizontal, 30)
             .padding(.bottom, 30)
         }
+    }
+
+    func formatDateToMDD(_ date: Date) -> String {
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "M/dd"
+        return dateFormatter.string(from: date)
     }
 }

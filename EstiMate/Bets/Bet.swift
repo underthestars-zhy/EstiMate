@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct Bet: Identifiable {
+struct Bet: Identifiable, Equatable {
     let id: UUID
     let title: String
     let emoji: String

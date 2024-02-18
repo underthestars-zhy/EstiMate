@@ -33,6 +33,10 @@ struct BeetSheet: View {
                 SheetAmount(status: $status)
             case .invite:
                 SheetInvite(status: $status)
+            case .receive(let betID):
+                SheetRecieve(status: $status, betID: betID)
+            case .side(bet: let bet):
+                SheetSide(status: $status, bet: bet)
             }
         }
         .background(Color(hexadecimal: "FAFAFA"))

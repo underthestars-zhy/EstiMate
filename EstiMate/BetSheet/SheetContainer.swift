@@ -27,6 +27,14 @@ struct SheetContainer: View {
             })
         .animation(.easeInOut, value: status)
         .ignoresSafeArea(.keyboard)
+        .onOpenURL { url in
+            switch url.host {
+            case "bet":
+                let betID = url.pathComponents[1]
+                status = .receive(betID: betID)
+            default: print(url.host ?? "Wrong")
+            }
+        }
     }
 }
 

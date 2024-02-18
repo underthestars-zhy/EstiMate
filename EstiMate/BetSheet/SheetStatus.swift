@@ -9,12 +9,14 @@ import Foundation
 import SwiftUI
 import SwiftUIX
 
-enum SheetStatus {
+enum SheetStatus: Equatable {
     case bottom
     case input
     case time
     case amount
     case invite
+    case receive(betID: String)
+    case side(bet: Bet)
 
     var needPadding: Bool {
         switch self {
