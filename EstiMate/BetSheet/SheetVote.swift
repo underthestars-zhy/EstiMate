@@ -37,7 +37,12 @@ struct SheetVote: View {
 
             VStack(spacing: 20) {
                 Button {
-
+                    Task {
+                        if try await WebAPI.vote(betID: bet.id.uuidString, side: true) {
+                            status = .bottom
+                            AllBets.shared.setVoted(id: bet.id)
+                        }
+                    }
                 } label: {
                     Text("YES")
                         .foregroundStyle(.white)
@@ -49,7 +54,12 @@ struct SheetVote: View {
                 }
 
                 Button {
-
+                    Task {
+                        if try await WebAPI.vote(betID: bet.id.uuidString, side: false) {
+                            status = .bottom
+                            AllBets.shared.setVoted(id: bet.id)
+                        }
+                    }
                 } label: {
                     Text("NO")
                         .foregroundStyle(.white)

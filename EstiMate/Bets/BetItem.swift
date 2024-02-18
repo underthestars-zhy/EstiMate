@@ -24,6 +24,8 @@ struct BetItem: View {
                     Text(bet.title)
                         .foregroundStyle(.black)
                         .font(.system(size: 18).weight(.bold))
+                        .multilineTextAlignment(.leading)
+                        .frame(maxWidth: .infinity, alignment: .leading)
 
                     HStack(spacing: 12) {
                         Image(systemName: "clock.badge")

@@ -246,5 +246,46 @@ struct WebAPI {
 
         return true
     }
+
+    static func vote(betID: String, side: Bool) async throws -> Bool {
+        guard let URL = URL(string: "https://b482-68-65-175-21.ngrok-free.app/vote") else { return false }
+        var request = URLRequest(url: URL)
+        request.httpMethod = "POST"
+
+        // Headers
+
+        request.addValue("application/json; charset=utf-8", forHTTPHeaderField: "Content-Type")
+
+        // JSON Body
+
+        let bodyObject: [String : Any] = [
+            "betId": betID,
+            "userId": UserDefaults.standard.string(forKey: "userID") ?? "",
+            "side": side
+        ]
+        request.httpBody = try! JSONSerialization.data(withJSONObject: bodyObject, options: [])
+
+        let (_, response) = try await URLSession.shared.data(for: request)
+
+        guard let httpResponse = response as? HTTPURLResponse, httpResponse.statusCode == 200 else {
+            return false
+        }
+
+        return true
+    }
+
+    static func voted() async throws -> [String] {
+        guard let URL = URL(string: "https://b482-68-65-175-21.ngrok-free.app/votes/\(UserDefaults.standard.string(forKey: "userID") ?? "")") else { return [] }
+
+        let (data, response) = try await URLSession.shared.data(from: URL)
+
+        guard let httpResponse = response as? HTTPURLResponse, httpResponse.statusCode == 200 else {
+            return []
+        }
+
+        let rawJson = try JSON(data: data)
+
+        return rawJson["result"].arrayValue.map(\.stringValue)
+    }
 }
 

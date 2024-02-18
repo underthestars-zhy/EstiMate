@@ -14,5 +14,5 @@ struct Bet: Identifiable, Equatable {
     let start: Date
     let end: Date
     let amount: Double
-    let status: BetStatus
+    var status: BetStatus
 }
