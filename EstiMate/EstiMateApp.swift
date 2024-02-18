@@ -24,7 +24,7 @@ struct EstiMateApp: App {
             }
             .task {
                 do {
-//                    userID = ""
+                    //                    userID = ""
                     try await WebAPI.checkPermission()
                 } catch {
                     print(error)
@@ -98,6 +98,16 @@ class AppDelegate: NSObject, UIApplicationDelegate, UNUserNotificationCenterDele
         case "join":
             if let name = userInfo["name"] as? String {
                 BetInvited.shared.list.append(name)
+            }
+        case "results":
+            if let data = userInfo["data"] as? [AnyHashable: Any],
+               let betID = data["betId"] as? String,
+               let change = data["change"] as? Double,
+               let userSide = data["userside"] as? Bool,
+               let voteSide = data["vote"] as? Bool,
+               let balance = data["amount"] as? Double {
+                let r = BetResult(betID: betID, change: change, userSide: userSide, voteSide: voteSide, balance: balance)
+                SheetStatusPublisher.shared.status = .result(betR: r)
             }
         default: break
         }

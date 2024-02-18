@@ -287,5 +287,17 @@ struct WebAPI {
 
         return rawJson["result"].arrayValue.map(\.stringValue)
     }
+
+    static func getBalance() async throws -> Double {
+        guard let URL = URL(string: "https://b482-68-65-175-21.ngrok-free.app/get-balance/\(UserDefaults.standard.string(forKey: "userID") ?? "")") else { return 0.0 }
+
+        let (data, response) = try await URLSession.shared.data(from: URL)
+
+        guard let httpResponse = response as? HTTPURLResponse, httpResponse.statusCode == 200 else {
+            return 0.0
+        }
+
+        return try JSONDecoder().decode(Double.self, from: data)
+    }
 }
 

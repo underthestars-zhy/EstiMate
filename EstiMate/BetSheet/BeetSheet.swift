@@ -39,6 +39,8 @@ struct BeetSheet: View {
                 SheetSide(status: $status, bet: bet)
             case .vote(bet: let bet):
                 SheetVote(status: $status, bet: bet)
+            case .result(betR: let bR):
+                SheatResult(status: $status, betResult: bR)
             }
         }
         .background(Color(hexadecimal: "FAFAFA"))

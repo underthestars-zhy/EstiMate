@@ -7,6 +7,7 @@
 
 import Foundation
 import SwiftDate
+import SwiftUI
 
 @Observable class AllBets {
     static let shared = AllBets()
@@ -34,6 +35,10 @@ import SwiftDate
 
         let voted = try await WebAPI.voted()
 
+        let balanace = try await WebAPI.getBalance()
+
+        print("My Balance", balanace)
+
         for (i, bet) in bets.enumerated() {
             if voted.contains(bet.id.uuidString) {
                 bets[i].status = .voted
@@ -41,6 +46,9 @@ import SwiftDate
         }
 
         self.bets = bets
+
+        UserDefaults.standard.setValue(balanace, forKey: "betCoins")
+        UserDefaults.standard.synchronize()
     }
 
     func getBet(by id: String) -> Bet? {

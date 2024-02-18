@@ -43,7 +43,7 @@ struct BetItem: View {
                 .padding(.top, 8)
             }
         }
-        .disabled(!areDatesOnSameDay(date1: bet.end, date2: Date()))
+        .disabled(!areDatesOnSameDay(date1: bet.end, date2: Date()) || bet.status == .voted)
     }
 
     func areDatesOnSameDay(date1: Date, date2: Date) -> Bool {

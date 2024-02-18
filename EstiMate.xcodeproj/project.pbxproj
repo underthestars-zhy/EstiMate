@@ -41,6 +41,8 @@
 		90C6085C2B81D3DF00189480 /* SheetRecieve.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90C6085B2B81D3DF00189480 /* SheetRecieve.swift */; };
 		90C6085E2B81E5B500189480 /* SheetVote.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90C6085D2B81E5B500189480 /* SheetVote.swift */; };
 		90C608612B81EA0D00189480 /* SwiftUIPullToRefresh in Frameworks */ = {isa = PBXBuildFile; productRef = 90C608602B81EA0D00189480 /* SwiftUIPullToRefresh */; };
+		90C608632B8213AD00189480 /* SheatResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90C608622B8213AD00189480 /* SheatResult.swift */; };
+		90C608652B82238600189480 /* BetResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90C608642B82238600189480 /* BetResult.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -76,6 +78,8 @@
 		90C6083F2B81BC1B00189480 /* AllBets.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllBets.swift; sourceTree = "<group>"; };
 		90C6085B2B81D3DF00189480 /* SheetRecieve.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SheetRecieve.swift; sourceTree = "<group>"; };
 		90C6085D2B81E5B500189480 /* SheetVote.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SheetVote.swift; sourceTree = "<group>"; };
+		90C608622B8213AD00189480 /* SheatResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SheatResult.swift; sourceTree = "<group>"; };
+		90C608642B82238600189480 /* BetResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BetResult.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -171,6 +175,7 @@
 				90C608122B814F1800189480 /* BetIndicator.swift */,
 				90C608142B81506200189480 /* BetStatus.swift */,
 				90C6081A2B817CBB00189480 /* Bet.swift */,
+				90C608642B82238600189480 /* BetResult.swift */,
 			);
 			path = Bets;
 			sourceTree = "<group>";
@@ -190,6 +195,7 @@
 				90C608382B81AF5C00189480 /* SheetInvite.swift */,
 				90C6085B2B81D3DF00189480 /* SheetRecieve.swift */,
 				90C6085D2B81E5B500189480 /* SheetVote.swift */,
+				90C608622B8213AD00189480 /* SheatResult.swift */,
 			);
 			path = BetSheet;
 			sourceTree = "<group>";
@@ -320,6 +326,7 @@
 				90C6082D2B819BB800189480 /* SheetTime.swift in Sources */,
 				90C608202B8186C000189480 /* SheetStatus.swift in Sources */,
 				90C6083B2B81AFAC00189480 /* BetInvited.swift in Sources */,
+				90C608632B8213AD00189480 /* SheatResult.swift in Sources */,
 				90C6085E2B81E5B500189480 /* SheetVote.swift in Sources */,
 				90C6082B2B81929100189480 /* CreateBet.swift in Sources */,
 				90C608302B819E3700189480 /* MeasureSize.swift in Sources */,
@@ -329,6 +336,7 @@
 				90C608292B818E2F00189480 /* SheetInput.swift in Sources */,
 				90C608322B81A1D200189480 /* SheetAmount.swift in Sources */,
 				90C6081E2B81850B00189480 /* BeetSheet.swift in Sources */,
+				90C608652B82238600189480 /* BetResult.swift in Sources */,
 				90C6081B2B817CBB00189480 /* Bet.swift in Sources */,
 				90C608032B81346800189480 /* GuideItem.swift in Sources */,
 			);
