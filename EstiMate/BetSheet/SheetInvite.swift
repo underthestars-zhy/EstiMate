@@ -40,6 +40,7 @@ struct SheetInvite: View {
                         .frame(maxWidth: .infinity, alignment: .leading)
                 }
             }
+            .animation(.easeInOut, value: betInvited.list)
             .padding(.leading, 30)
             .padding(.bottom, 30)
 
