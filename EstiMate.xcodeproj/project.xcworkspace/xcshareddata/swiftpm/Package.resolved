@@ -1,6 +1,15 @@
 {
-  "originHash" : "5fe01254ca865cc61117a15dc5fb508ee9ae581d9a9256046c014542499c7560",
+  "originHash" : "8e47fb915285256eecfb7eb5ddea4b0ff3d9993c87cd64d54d4dde588dd26a55",
   "pins" : [
+    {
+      "identity" : "swiftdate",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/malcommac/SwiftDate",
+      "state" : {
+        "revision" : "5d943224c3bb173e6ecf27295611615eba90c80e",
+        "version" : "7.0.0"
+      }
+    },
     {
       "identity" : "swiftuix",
       "kind" : "remoteSourceControl",
@@ -8,6 +17,24 @@
       "state" : {
         "revision" : "a5a22a1aaca885c229f475af049d75a6d9144de8",
         "version" : "0.1.9"
+      }
+    },
+    {
+      "identity" : "swiftyjson",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/SwiftyJSON/SwiftyJSON",
+      "state" : {
+        "revision" : "b3dcd7dbd0d488e1a7077cb33b00f2083e382f07",
+        "version" : "5.0.1"
+      }
+    },
+    {
+      "identity" : "visualeffectview",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/efremidze/VisualEffectView",
+      "state" : {
+        "revision" : "df0121bbd2bb99c1ccd8eed5c5b932fb1648dfe4",
+        "version" : "4.1.5"
       }
     }
   ],

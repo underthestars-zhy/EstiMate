@@ -15,6 +15,29 @@
 		90C608012B81317500189480 /* WelcomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90C608002B81317500189480 /* WelcomeView.swift */; };
 		90C608032B81346800189480 /* GuideItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90C608022B81346800189480 /* GuideItem.swift */; };
 		90C608062B81351600189480 /* SwiftUIX in Frameworks */ = {isa = PBXBuildFile; productRef = 90C608052B81351600189480 /* SwiftUIX */; };
+		90C6080B2B813F0800189480 /* NavBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90C6080A2B813F0800189480 /* NavBar.swift */; };
+		90C6080E2B814D8100189480 /* VisualEffectView in Frameworks */ = {isa = PBXBuildFile; productRef = 90C6080D2B814D8100189480 /* VisualEffectView */; };
+		90C608112B814ED200189480 /* BetItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90C608102B814ED200189480 /* BetItem.swift */; };
+		90C608132B814F1800189480 /* BetIndicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90C608122B814F1800189480 /* BetIndicator.swift */; };
+		90C608152B81506200189480 /* BetStatus.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90C608142B81506200189480 /* BetStatus.swift */; };
+		90C608192B8152B000189480 /* SwiftDate in Frameworks */ = {isa = PBXBuildFile; productRef = 90C608182B8152B000189480 /* SwiftDate */; };
+		90C6081B2B817CBB00189480 /* Bet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90C6081A2B817CBB00189480 /* Bet.swift */; };
+		90C6081E2B81850B00189480 /* BeetSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90C6081D2B81850B00189480 /* BeetSheet.swift */; };
+		90C608202B8186C000189480 /* SheetStatus.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90C6081F2B8186C000189480 /* SheetStatus.swift */; };
+		90C608222B81875B00189480 /* SheetBottom.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90C608212B81875B00189480 /* SheetBottom.swift */; };
+		90C608242B8188AC00189480 /* SheetContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90C608232B8188AC00189480 /* SheetContainer.swift */; };
+		90C608272B818C5400189480 /* WebAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90C608262B818C5400189480 /* WebAPI.swift */; };
+		90C608292B818E2F00189480 /* SheetInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90C608282B818E2F00189480 /* SheetInput.swift */; };
+		90C6082B2B81929100189480 /* CreateBet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90C6082A2B81929100189480 /* CreateBet.swift */; };
+		90C6082D2B819BB800189480 /* SheetTime.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90C6082C2B819BB800189480 /* SheetTime.swift */; };
+		90C608302B819E3700189480 /* MeasureSize.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90C6082F2B819E3700189480 /* MeasureSize.swift */; };
+		90C608322B81A1D200189480 /* SheetAmount.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90C608312B81A1D200189480 /* SheetAmount.swift */; };
+		90C608342B81A4C300189480 /* SheetSide.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90C608332B81A4C300189480 /* SheetSide.swift */; };
+		90C608372B81ADC200189480 /* SwiftyJSON in Frameworks */ = {isa = PBXBuildFile; productRef = 90C608362B81ADC200189480 /* SwiftyJSON */; };
+		90C608392B81AF5C00189480 /* SheetInvite.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90C608382B81AF5C00189480 /* SheetInvite.swift */; };
+		90C6083B2B81AFAC00189480 /* BetInvited.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90C6083A2B81AFAC00189480 /* BetInvited.swift */; };
+		90C6083D2B81B88400189480 /* icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 90C6083C2B81B88400189480 /* icon.png */; };
+		90C608402B81BC1B00189480 /* AllBets.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90C6083F2B81BC1B00189480 /* AllBets.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -27,6 +50,27 @@
 		90C608002B81317500189480 /* WelcomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeView.swift; sourceTree = "<group>"; };
 		90C608022B81346800189480 /* GuideItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GuideItem.swift; sourceTree = "<group>"; };
 		90C608082B8139A200189480 /* EstiMate.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = EstiMate.entitlements; sourceTree = "<group>"; };
+		90C6080A2B813F0800189480 /* NavBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavBar.swift; sourceTree = "<group>"; };
+		90C608102B814ED200189480 /* BetItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BetItem.swift; sourceTree = "<group>"; };
+		90C608122B814F1800189480 /* BetIndicator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BetIndicator.swift; sourceTree = "<group>"; };
+		90C608142B81506200189480 /* BetStatus.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BetStatus.swift; sourceTree = "<group>"; };
+		90C608162B81523E00189480 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		90C6081A2B817CBB00189480 /* Bet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Bet.swift; sourceTree = "<group>"; };
+		90C6081D2B81850B00189480 /* BeetSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BeetSheet.swift; sourceTree = "<group>"; };
+		90C6081F2B8186C000189480 /* SheetStatus.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SheetStatus.swift; sourceTree = "<group>"; };
+		90C608212B81875B00189480 /* SheetBottom.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SheetBottom.swift; sourceTree = "<group>"; };
+		90C608232B8188AC00189480 /* SheetContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SheetContainer.swift; sourceTree = "<group>"; };
+		90C608262B818C5400189480 /* WebAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebAPI.swift; sourceTree = "<group>"; };
+		90C608282B818E2F00189480 /* SheetInput.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SheetInput.swift; sourceTree = "<group>"; };
+		90C6082A2B81929100189480 /* CreateBet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateBet.swift; sourceTree = "<group>"; };
+		90C6082C2B819BB800189480 /* SheetTime.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SheetTime.swift; sourceTree = "<group>"; };
+		90C6082F2B819E3700189480 /* MeasureSize.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MeasureSize.swift; sourceTree = "<group>"; };
+		90C608312B81A1D200189480 /* SheetAmount.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SheetAmount.swift; sourceTree = "<group>"; };
+		90C608332B81A4C300189480 /* SheetSide.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SheetSide.swift; sourceTree = "<group>"; };
+		90C608382B81AF5C00189480 /* SheetInvite.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SheetInvite.swift; sourceTree = "<group>"; };
+		90C6083A2B81AFAC00189480 /* BetInvited.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BetInvited.swift; sourceTree = "<group>"; };
+		90C6083C2B81B88400189480 /* icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = icon.png; path = EstiMate/Statics/icon.png; sourceTree = SOURCE_ROOT; };
+		90C6083F2B81BC1B00189480 /* AllBets.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllBets.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -34,7 +78,10 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				90C6080E2B814D8100189480 /* VisualEffectView in Frameworks */,
 				90C608062B81351600189480 /* SwiftUIX in Frameworks */,
+				90C608372B81ADC200189480 /* SwiftyJSON in Frameworks */,
+				90C608192B8152B000189480 /* SwiftDate in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -61,6 +108,13 @@
 		90C607D42B80C8E300189480 /* EstiMate */ = {
 			isa = PBXGroup;
 			children = (
+				90C6083E2B81B88C00189480 /* Statics */,
+				90C6082E2B819E3000189480 /* Extensions */,
+				90C608252B818C4D00189480 /* API */,
+				90C6081C2B8184FE00189480 /* BetSheet */,
+				90C608162B81523E00189480 /* Info.plist */,
+				90C6080F2B814ECB00189480 /* Bets */,
+				90C608092B813F0300189480 /* Navigation */,
 				90C608082B8139A200189480 /* EstiMate.entitlements */,
 				90C607FF2B81314100189480 /* Welcome */,
 				90C607D52B80C8E300189480 /* EstiMateApp.swift */,
@@ -96,6 +150,68 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		90C608092B813F0300189480 /* Navigation */ = {
+			isa = PBXGroup;
+			children = (
+				90C6080A2B813F0800189480 /* NavBar.swift */,
+			);
+			path = Navigation;
+			sourceTree = "<group>";
+		};
+		90C6080F2B814ECB00189480 /* Bets */ = {
+			isa = PBXGroup;
+			children = (
+				90C608102B814ED200189480 /* BetItem.swift */,
+				90C608122B814F1800189480 /* BetIndicator.swift */,
+				90C608142B81506200189480 /* BetStatus.swift */,
+				90C6081A2B817CBB00189480 /* Bet.swift */,
+			);
+			path = Bets;
+			sourceTree = "<group>";
+		};
+		90C6081C2B8184FE00189480 /* BetSheet */ = {
+			isa = PBXGroup;
+			children = (
+				90C6081D2B81850B00189480 /* BeetSheet.swift */,
+				90C6081F2B8186C000189480 /* SheetStatus.swift */,
+				90C608212B81875B00189480 /* SheetBottom.swift */,
+				90C608232B8188AC00189480 /* SheetContainer.swift */,
+				90C608282B818E2F00189480 /* SheetInput.swift */,
+				90C6082A2B81929100189480 /* CreateBet.swift */,
+				90C6082C2B819BB800189480 /* SheetTime.swift */,
+				90C608312B81A1D200189480 /* SheetAmount.swift */,
+				90C608332B81A4C300189480 /* SheetSide.swift */,
+				90C608382B81AF5C00189480 /* SheetInvite.swift */,
+			);
+			path = BetSheet;
+			sourceTree = "<group>";
+		};
+		90C608252B818C4D00189480 /* API */ = {
+			isa = PBXGroup;
+			children = (
+				90C608262B818C5400189480 /* WebAPI.swift */,
+				90C6083A2B81AFAC00189480 /* BetInvited.swift */,
+				90C6083F2B81BC1B00189480 /* AllBets.swift */,
+			);
+			path = API;
+			sourceTree = "<group>";
+		};
+		90C6082E2B819E3000189480 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				90C6082F2B819E3700189480 /* MeasureSize.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		90C6083E2B81B88C00189480 /* Statics */ = {
+			isa = PBXGroup;
+			children = (
+				90C6083C2B81B88400189480 /* icon.png */,
+			);
+			path = Statics;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -114,6 +230,9 @@
 			name = EstiMate;
 			packageProductDependencies = (
 				90C608052B81351600189480 /* SwiftUIX */,
+				90C6080D2B814D8100189480 /* VisualEffectView */,
+				90C608182B8152B000189480 /* SwiftDate */,
+				90C608362B81ADC200189480 /* SwiftyJSON */,
 			);
 			productName = EstiMate;
 			productReference = 90C607D22B80C8E300189480 /* EstiMate.app */;
@@ -145,6 +264,9 @@
 			mainGroup = 90C607C92B80C8E300189480;
 			packageReferences = (
 				90C608042B81351600189480 /* XCRemoteSwiftPackageReference "SwiftUIX" */,
+				90C6080C2B814D8100189480 /* XCRemoteSwiftPackageReference "VisualEffectView" */,
+				90C608172B8152B000189480 /* XCRemoteSwiftPackageReference "SwiftDate" */,
+				90C608352B81ADC200189480 /* XCRemoteSwiftPackageReference "SwiftyJSON" */,
 			);
 			productRefGroup = 90C607D32B80C8E300189480 /* Products */;
 			projectDirPath = "";
@@ -160,6 +282,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				90C6083D2B81B88400189480 /* icon.png in Resources */,
 				90C607FE2B80ED9700189480 /* Launch Screen.storyboard in Resources */,
 				90C607DD2B80C8E400189480 /* Preview Assets.xcassets in Resources */,
 				90C607DA2B80C8E400189480 /* Assets.xcassets in Resources */,
@@ -173,9 +296,28 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				90C6080B2B813F0800189480 /* NavBar.swift in Sources */,
+				90C608152B81506200189480 /* BetStatus.swift in Sources */,
+				90C608222B81875B00189480 /* SheetBottom.swift in Sources */,
+				90C608242B8188AC00189480 /* SheetContainer.swift in Sources */,
+				90C608342B81A4C300189480 /* SheetSide.swift in Sources */,
+				90C608402B81BC1B00189480 /* AllBets.swift in Sources */,
 				90C607D82B80C8E300189480 /* ContentView.swift in Sources */,
+				90C608272B818C5400189480 /* WebAPI.swift in Sources */,
+				90C608132B814F1800189480 /* BetIndicator.swift in Sources */,
 				90C608012B81317500189480 /* WelcomeView.swift in Sources */,
+				90C6082D2B819BB800189480 /* SheetTime.swift in Sources */,
+				90C608202B8186C000189480 /* SheetStatus.swift in Sources */,
+				90C6083B2B81AFAC00189480 /* BetInvited.swift in Sources */,
+				90C6082B2B81929100189480 /* CreateBet.swift in Sources */,
+				90C608302B819E3700189480 /* MeasureSize.swift in Sources */,
+				90C608392B81AF5C00189480 /* SheetInvite.swift in Sources */,
 				90C607D62B80C8E300189480 /* EstiMateApp.swift in Sources */,
+				90C608112B814ED200189480 /* BetItem.swift in Sources */,
+				90C608292B818E2F00189480 /* SheetInput.swift in Sources */,
+				90C608322B81A1D200189480 /* SheetAmount.swift in Sources */,
+				90C6081E2B81850B00189480 /* BeetSheet.swift in Sources */,
+				90C6081B2B817CBB00189480 /* Bet.swift in Sources */,
 				90C608032B81346800189480 /* GuideItem.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -314,12 +456,14 @@
 				DEVELOPMENT_TEAM = 44BN78992X;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = EstiMate/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = "Launch Screen.storyboard";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UIUserInterfaceStyle = Light;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -345,12 +489,14 @@
 				DEVELOPMENT_TEAM = 44BN78992X;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = EstiMate/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = "Launch Screen.storyboard";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UIUserInterfaceStyle = Light;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -396,6 +542,30 @@
 				minimumVersion = 0.1.9;
 			};
 		};
+		90C6080C2B814D8100189480 /* XCRemoteSwiftPackageReference "VisualEffectView" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/efremidze/VisualEffectView";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 4.1.5;
+			};
+		};
+		90C608172B8152B000189480 /* XCRemoteSwiftPackageReference "SwiftDate" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/malcommac/SwiftDate";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 7.0.0;
+			};
+		};
+		90C608352B81ADC200189480 /* XCRemoteSwiftPackageReference "SwiftyJSON" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/SwiftyJSON/SwiftyJSON";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.0.1;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -403,6 +573,21 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 90C608042B81351600189480 /* XCRemoteSwiftPackageReference "SwiftUIX" */;
 			productName = SwiftUIX;
+		};
+		90C6080D2B814D8100189480 /* VisualEffectView */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 90C6080C2B814D8100189480 /* XCRemoteSwiftPackageReference "VisualEffectView" */;
+			productName = VisualEffectView;
+		};
+		90C608182B8152B000189480 /* SwiftDate */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 90C608172B8152B000189480 /* XCRemoteSwiftPackageReference "SwiftDate" */;
+			productName = SwiftDate;
+		};
+		90C608362B81ADC200189480 /* SwiftyJSON */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 90C608352B81ADC200189480 /* XCRemoteSwiftPackageReference "SwiftyJSON" */;
+			productName = SwiftyJSON;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

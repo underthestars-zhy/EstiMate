@@ -10,6 +10,7 @@ import AuthenticationServices
 
 struct WelcomeView: View {
     @AppStorage("userID") var userID: String = ""
+    @AppStorage("fullName") var fullName: String = ""
 
     init() {
         UIPageControl.appearance().currentPageIndicatorTintColor = .black
@@ -56,9 +57,15 @@ struct WelcomeView: View {
                             }
                             let userIdentifier = appleIDCredential.user
 
-//                            userID = userIdentifier
-
                             print(fullName, userIdentifier)
+
+                            self.fullName = fullName
+
+                            Task {
+                                if try await WebAPI.createAccount(name: fullName, id: userIdentifier) {
+                                    userID = userIdentifier
+                                }
+                            }
                         } else {
                             print("Authorisation failed: Cannot get ID")
                         }
