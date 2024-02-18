@@ -24,6 +24,10 @@ struct SheetContainer: View {
                 if status == .input {
                     status = .bottom
                 }
+
+                if case .receive(_) = status {
+                    status = .bottom
+                }
             })
         .animation(.easeInOut, value: status)
         .ignoresSafeArea(.keyboard)

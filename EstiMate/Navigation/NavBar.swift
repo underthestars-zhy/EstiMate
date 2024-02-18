@@ -10,7 +10,7 @@ import SwiftUIX
 import VisualEffectView
 
 struct NavBar: View {
-    @State var betCoins: Double = 100
+    @AppStorage("betCoins") var betCoins: Double = 100
 
     var body: some View {
         VStack {

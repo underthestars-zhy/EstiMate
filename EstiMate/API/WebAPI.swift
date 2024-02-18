@@ -98,7 +98,7 @@ struct WebAPI {
     }
 
     static func createBet(bet: Bet) async throws -> Bool {
-        guard var URL = URL(string: "https://b482-68-65-175-21.ngrok-free.app/create-bet") else { return false }
+        guard let URL = URL(string: "https://b482-68-65-175-21.ngrok-free.app/create-bet") else { return false }
         var request = URLRequest(url: URL)
         request.httpMethod = "POST"
 
@@ -147,6 +147,33 @@ struct WebAPI {
         }
 
         return Bet(id: UUID(uuidString: json["id"]["betId"].stringValue) ?? UUID(), title: json["id"]["desc"].stringValue, emoji: json["id"]["emoji"].stringValue, start: Date(timeIntervalSince1970: TimeInterval(json["id"]["createdAt"].intValue)), end: Date(timeIntervalSince1970: TimeInterval(json["id"]["expiry"].intValue)), amount: json["id"]["amount"].doubleValue, status: calStatus())
+    }
+
+    static func setSide(betID: String, side: Bool) async throws -> Bool {
+        guard let URL = URL(string: "https://b482-68-65-175-21.ngrok-free.app/set-side") else { return false }
+        var request = URLRequest(url: URL)
+        request.httpMethod = "POST"
+
+        // Headers
+
+        request.addValue("application/json; charset=utf-8", forHTTPHeaderField: "Content-Type")
+
+        // JSON Body
+
+        let bodyObject: [String : Any] = [
+            "betId": betID,
+            "userId": UserDefaults.standard.string(forKey: "userID") ?? "",
+            "side": side
+        ]
+        request.httpBody = try! JSONSerialization.data(withJSONObject: bodyObject, options: [])
+
+        let (_, response) = try await URLSession.shared.data(for: request)
+
+        guard let httpResponse = response as? HTTPURLResponse, httpResponse.statusCode == 200 else {
+            return false
+        }
+
+        return true
     }
 }
 

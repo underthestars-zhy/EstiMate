@@ -8,6 +8,8 @@
 import SwiftUI
 
 struct SheetSide: View {
+    @AppStorage("betCoins") var betCoins: Double = 100
+
     @State var createBet = CreateBet.shared
     @Binding var status: SheetStatus
     let bet: Bet
@@ -35,7 +37,12 @@ struct SheetSide: View {
 
             VStack(spacing: 20) {
                 Button {
-
+                    Task {
+                        if try await WebAPI.setSide(betID: bet.id.uuidString, side: true) {
+                            status = .bottom
+                            betCoins -= bet.amount
+                        }
+                    }
                 } label: {
                     Text("YES")
                         .foregroundStyle(.white)
@@ -47,7 +54,12 @@ struct SheetSide: View {
                 }
 
                 Button {
-
+                    Task {
+                        if try await WebAPI.setSide(betID: bet.id.uuidString, side: false) {
+                            status = .bottom
+                            betCoins -= bet.amount
+                        }
+                    }
                 } label: {
                     Text("NO")
                         .foregroundStyle(.white)
