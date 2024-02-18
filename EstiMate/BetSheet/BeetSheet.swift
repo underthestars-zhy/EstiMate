@@ -11,6 +11,8 @@ import SwiftUIX
 struct BeetSheet: View {
     @Binding var status: SheetStatus
 
+    @Namespace var namespace
+
     var body: some View {
         VStack {
             switch status {
@@ -19,28 +21,28 @@ struct BeetSheet: View {
                     status = .input
                     CreateBet.shared.reset()
                 } label: {
-                    SheetBottom()
+                    SheetBottom(namespace: namespace)
                         .width(Screen.width + 4.0)
                         .height(Screen.height * 0.7)
                 }
             case .input:
-                SheetInput(status: $status)
+                SheetInput(namespace: namespace, status: $status)
                     .width(Screen.width + 4.0)
                     .height(Screen.height * 0.6)
             case .time:
-                SheetTime(status: $status)
+                SheetTime(namespace: namespace, status: $status)
             case .amount:
-                SheetAmount(status: $status)
+                SheetAmount(namespace: namespace, status: $status)
             case .invite:
-                SheetInvite(status: $status)
+                SheetInvite(namespace: namespace, status: $status)
             case .receive(let betID):
-                SheetRecieve(status: $status, betID: betID)
+                SheetRecieve(namespace: namespace, status: $status, betID: betID)
             case .side(bet: let bet):
-                SheetSide(status: $status, bet: bet)
+                SheetSide(namespace: namespace, status: $status, bet: bet)
             case .vote(bet: let bet):
-                SheetVote(status: $status, bet: bet)
+                SheetVote(namespace: namespace, status: $status, bet: bet)
             case .result(betR: let bR):
-                SheatResult(status: $status, betResult: bR)
+                SheatResult(namespace: namespace, status: $status, betResult: bR)
             }
         }
         .background(Color(hexadecimal: "FAFAFA"))

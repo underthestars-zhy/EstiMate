@@ -8,6 +8,8 @@
 import SwiftUI
 
 struct SheetVote: View {
+    let namespace: Namespace.ID
+    
     @AppStorage("betCoins") var betCoins: Double = 100
 
     @State var createBet = CreateBet.shared
@@ -24,6 +26,7 @@ struct SheetVote: View {
                 Text("Vote")
                     .font(.system(size: 16).weight(.bold))
             }
+            .matchedGeometryEffect(id: "indicator", in: namespace)
             .opacity(0.8)
             .frame(maxWidth: .infinity, alignment: .leading)
             .padding(.leading, 30)

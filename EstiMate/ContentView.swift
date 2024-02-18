@@ -30,6 +30,7 @@ struct ContentView: View {
                 }
             }
             .padding(.top, 168)
+            .animation(.easeInOut, value: allBets.bets)
         }
         .frame(maxWidth: .infinity, maxHeight: .infinity)
         .overlay {

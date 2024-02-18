@@ -8,6 +8,8 @@
 import SwiftUI
 
 struct SheetRecieve: View {
+    let namespace: Namespace.ID
+    
     @State var createBet = CreateBet.shared
     @Binding var status: SheetStatus
     let betID: String
@@ -24,6 +26,7 @@ struct SheetRecieve: View {
                 Text("Bet Invitation")
                     .font(.system(size: 16).weight(.bold))
             }
+            .matchedGeometryEffect(id: "indicator", in: namespace)
             .opacity(0.8)
             .frame(maxWidth: .infinity, alignment: .leading)
             .padding(.leading, 30)

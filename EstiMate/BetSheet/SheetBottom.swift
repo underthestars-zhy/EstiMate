@@ -9,6 +9,8 @@ import SwiftUI
 import SwiftUIX
 
 struct SheetBottom: View {
+    let namespace: Namespace.ID
+    
     var body: some View {
         VStack {
             HStack(spacing: 12) {
@@ -35,8 +37,4 @@ struct SheetBottom: View {
             Spacer()
         }
     }
-}
-
-#Preview {
-    SheetBottom()
 }

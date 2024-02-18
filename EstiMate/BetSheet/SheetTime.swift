@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct SheetTime: View {
+    let namespace: Namespace.ID
     @State var createBet = CreateBet.shared
     @Binding var status: SheetStatus
 
@@ -21,6 +22,7 @@ struct SheetTime: View {
                 Text("End Date")
                     .font(.system(size: 16).weight(.bold))
             }
+            .matchedGeometryEffect(id: "indicator", in: namespace)
             .opacity(0.8)
             .frame(maxWidth: .infinity, alignment: .leading)
             .padding(.leading, 30)
