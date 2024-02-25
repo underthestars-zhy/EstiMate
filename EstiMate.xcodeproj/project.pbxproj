@@ -43,6 +43,7 @@
 		90C608612B81EA0D00189480 /* SwiftUIPullToRefresh in Frameworks */ = {isa = PBXBuildFile; productRef = 90C608602B81EA0D00189480 /* SwiftUIPullToRefresh */; };
 		90C608632B8213AD00189480 /* SheatResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90C608622B8213AD00189480 /* SheatResult.swift */; };
 		90C608652B82238600189480 /* BetResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90C608642B82238600189480 /* BetResult.swift */; };
+		C503C1B62B8AF11C00D15A1B /* SwiftUIX in Frameworks */ = {isa = PBXBuildFile; productRef = C503C1B52B8AF11C00D15A1B /* SwiftUIX */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -90,6 +91,7 @@
 				90C6080E2B814D8100189480 /* VisualEffectView in Frameworks */,
 				90C608062B81351600189480 /* SwiftUIX in Frameworks */,
 				90C608612B81EA0D00189480 /* SwiftUIPullToRefresh in Frameworks */,
+				C503C1B62B8AF11C00D15A1B /* SwiftUIX in Frameworks */,
 				90C608372B81ADC200189480 /* SwiftyJSON in Frameworks */,
 				90C608192B8152B000189480 /* SwiftDate in Frameworks */,
 			);
@@ -248,6 +250,7 @@
 				90C608182B8152B000189480 /* SwiftDate */,
 				90C608362B81ADC200189480 /* SwiftyJSON */,
 				90C608602B81EA0D00189480 /* SwiftUIPullToRefresh */,
+				C503C1B52B8AF11C00D15A1B /* SwiftUIX */,
 			);
 			productName = EstiMate;
 			productReference = 90C607D22B80C8E300189480 /* EstiMate.app */;
@@ -627,6 +630,10 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 90C6085F2B81EA0D00189480 /* XCRemoteSwiftPackageReference "swiftui-pull-to-refresh" */;
 			productName = SwiftUIPullToRefresh;
+		};
+		C503C1B52B8AF11C00D15A1B /* SwiftUIX */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = SwiftUIX;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

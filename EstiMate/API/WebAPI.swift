@@ -9,6 +9,9 @@ import Foundation
 import SwiftyJSON
 
 struct WebAPI {
+    
+    static var BASE_URL: String = "http://localhost:3333/"
+    
     static func checkPermission() async throws {
         guard let URL = URL(string: "https://apple.com") else { return }
 
@@ -17,7 +20,7 @@ struct WebAPI {
 
 
     static func createAccount(name: String, id: String) async throws -> Bool {
-        guard let URL = URL(string: "https://b482-68-65-175-21.ngrok-free.app/create-user") else { return false }
+        guard let URL = URL(string: "\(BASE_URL)create-user") else { return false }
         var request = URLRequest(url: URL)
         request.httpMethod = "POST"
 
@@ -98,7 +101,7 @@ struct WebAPI {
     }
 
     static func createBet(bet: Bet) async throws -> Bool {
-        guard let URL = URL(string: "https://b482-68-65-175-21.ngrok-free.app/create-bet") else { return false }
+        guard let URL = URL(string: "\(BASE_URL)create-bet") else { return false }
         var request = URLRequest(url: URL)
         request.httpMethod = "POST"
 
@@ -128,7 +131,7 @@ struct WebAPI {
     }
 
     static func getBet(by betID: String) async throws -> Bet? {
-        guard let URL = URL(string: "https://b482-68-65-175-21.ngrok-free.app/bet/\(betID)") else { return nil }
+        guard let URL = URL(string: "\(BASE_URL)\(betID)") else { return nil }
 
         let (data, response) = try await URLSession.shared.data(from: URL)
 
@@ -150,7 +153,7 @@ struct WebAPI {
     }
 
     static func setSide(betID: String, side: Bool) async throws -> Bool {
-        guard let URL = URL(string: "https://b482-68-65-175-21.ngrok-free.app/set-side") else { return false }
+        guard let URL = URL(string: "\(BASE_URL)set-side") else { return false }
         var request = URLRequest(url: URL)
         request.httpMethod = "POST"
 
@@ -181,7 +184,7 @@ struct WebAPI {
 //    }
 
     static func fetchAllBets() async throws -> [Bet] {
-        guard let URL = URL(string: "https://b482-68-65-175-21.ngrok-free.app/bets/\(UserDefaults.standard.string(forKey: "userID") ?? "")") else { return [] }
+        guard let URL = URL(string: "\(BASE_URL)bets/\(UserDefaults.standard.string(forKey: "userID") ?? "")") else { return [] }
 
         let (data, response) = try await URLSession.shared.data(from: URL)
 
@@ -211,7 +214,7 @@ struct WebAPI {
     }
 
     static func setDeviceToken(token: String) async throws {
-        guard let URL = URL(string: "https://b482-68-65-175-21.ngrok-free.app/update-device-token") else { return }
+        guard let URL = URL(string: "\(BASE_URL)update-device-token") else { return }
         var request = URLRequest(url: URL)
         request.httpMethod = "POST"
 
@@ -236,7 +239,7 @@ struct WebAPI {
     }
 
     static func joinBet(bet: Bet) async throws -> Bool {
-        guard let URL = URL(string: "https://b482-68-65-175-21.ngrok-free.app/join-bet/\(UserDefaults.standard.string(forKey: "userID") ?? "")/\(bet.id)") else { return false }
+        guard let URL = URL(string: "\(BASE_URL)join-bet/\(UserDefaults.standard.string(forKey: "userID") ?? "")/\(bet.id)") else { return false }
 
         let (_, response) = try await URLSession.shared.data(from: URL)
 
@@ -248,7 +251,7 @@ struct WebAPI {
     }
 
     static func vote(betID: String, side: Bool) async throws -> Bool {
-        guard let URL = URL(string: "https://b482-68-65-175-21.ngrok-free.app/vote") else { return false }
+        guard let URL = URL(string: "\(BASE_URL)vote") else { return false }
         var request = URLRequest(url: URL)
         request.httpMethod = "POST"
 
@@ -275,7 +278,7 @@ struct WebAPI {
     }
 
     static func voted() async throws -> [String] {
-        guard let URL = URL(string: "https://b482-68-65-175-21.ngrok-free.app/votes/\(UserDefaults.standard.string(forKey: "userID") ?? "")") else { return [] }
+        guard let URL = URL(string: "\(BASE_URL)votes/\(UserDefaults.standard.string(forKey: "userID") ?? "")") else { return [] }
 
         let (data, response) = try await URLSession.shared.data(from: URL)
 
@@ -289,7 +292,7 @@ struct WebAPI {
     }
 
     static func getBalance() async throws -> Double {
-        guard let URL = URL(string: "https://b482-68-65-175-21.ngrok-free.app/get-balance/\(UserDefaults.standard.string(forKey: "userID") ?? "")") else { return 0.0 }
+        guard let URL = URL(string: "\(BASE_URL)get-balance/\(UserDefaults.standard.string(forKey: "userID") ?? "")") else { return 0.0 }
 
         let (data, response) = try await URLSession.shared.data(from: URL)
 
